@@ -1,0 +1,11 @@
+version: "3.5"
+services:
+  chat_completion:
+    container_name: chat_completion
+    build:
+      context: .
+    #restart: always
+    volumes:
+      - .:/app
+      - - /app/node_modules
+    command: ts-node index.ts
